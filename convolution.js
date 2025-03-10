@@ -1,9 +1,11 @@
 import {kernels} from "./kernels.js";
 
 document.getElementById("calculate").addEventListener("click", function() {
+  document.documentElement.style.cursor = "wait";
   const img = document.getElementById("image-preview");
     if (!img.src || img.style.display === "none") {
         alert("No hay imagen cargada.");
+        document.documentElement.style.cursor = "default";
         return;
     }
 
@@ -16,6 +18,9 @@ document.getElementById("calculate").addEventListener("click", function() {
     const filteredImage = document.getElementById("image-preview-generated");
     filteredImage.src = filteredCanvas.toDataURL();
     filteredImage.style.display = "block";
+    setTimeout(() => {
+      document.documentElement.style.cursor = "default";
+  }, 500);
 });
 
 function applyConvolution(img, kernel) {

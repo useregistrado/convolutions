@@ -135,8 +135,14 @@ function renderKernel(kernel) {
   const size = kernel.length
   const kernelPreview = document.getElementById("kernel-preview");
   kernelPreview.innerHTML = "";
+  if (window.innerWidth <= 768) {
+    kernelPreview.style.gridTemplateColumns = `repeat(${size}, 30px)`;
+    kernelPreview.style.gridTemplateRows = `repeat(${size}, 30px)`;
+} else {
   kernelPreview.style.gridTemplateColumns = `repeat(${size}, 50px)`;
   kernelPreview.style.gridTemplateRows = `repeat(${size}, 50px)`;
+}
+  
 
   kernel.forEach(row => {
     row.forEach(value => {

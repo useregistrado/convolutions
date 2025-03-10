@@ -403,6 +403,10 @@ footer a:hover {
     font-size: 12px;
   }
 
+  #text-input {
+    width: 3em;;
+  }
+
 }
 
 /* ✅ En Celulares (menos de 768px): 1 columna */
