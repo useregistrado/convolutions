@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Neuronal Convolucional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="language-selector">
+    <label id="langlabel" for="language">Language:</label>
+    <select id="language">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+    </select>
+</div>
+    <header id="banner">
+        <h1 data-key="title">
+            Aprende y entiende cómo una red neuronal convolucional aplica filtros para detectar patrones en imágenes.
+        </h1>
+    </header>
+    <div class="kernel-container">
+      <!-- Primera columna: Selector de Dimensiones -->
+      <div class="kernel-column">
+        <label for="kernel-size">Dimensiones del Kernel:</label>
+        <select id="kernel-size">
+          <option value="3x3" selected>3x3</option>
+          <option value="5x5">5x5</option>
+          <option value="7x7" disabled>7x7 soon</option>
+          <option value="25x25" disabled>25x25 soon</option>
+          <option value="Personalizado" disabled>Personalized soon</option>
+        </select>
+      </div>
+
+      <!-- Segunda columna: Selector de Letra -->
+      <div class="kernel-column">
+          <label for="letter">Kernel</label>
+          <select id="letter">
+          </select>
+      </div>
+
+      <!-- Tercera columna: Concatenación de datos -->
+      <div class="kernel-column">
+          <label>Selección</label>
+          <p id="result"></p>
+      </div>
+
+      <!-- Cuarta columna: Botón de Calcular -->
+      <div class="kernel-column">
+        <label>go</label>
+          <button id="calculate">Calcular</button>
+      </div>
+  </div>
+  <div class="image-section">
+    <!-- Primera columna: Botón para cargar imagen -->
+    <div class="image-column">
+      <div class="image-container">
+        <img id="image-preview" src="" alt="Previsualización" style="display: none;">
+        <label for="image-upload" class="custom-button">Upload image ⬆️</label>
+        <input type="file" id="image-upload" accept="image/*" hidden>
+      </div>
+    </div>
+
+    <!-- Segunda columna: Input de texto -->
+    <div class="image-column">
+      <div class="kernel-column-father">
+        <div class="kernel-preview-father">
+          <input type="number" id="text-input" placeholder="K" value="1">
+          <span class="x">X</span>
+          <div id="kernel-preview" class="kernel-preview">
+          </div>
+          <span class="x">=</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tercera columna: Botón de acción -->
+    <div class="image-column">
+      <div class="image-container">
+        <img id="image-preview-generated" src="" alt="Previsualización" style="display: none;">
+        <button id="action-button">Download ⬇️</button>
+      </div>
+    </div>
+  </div>
+  <article>
+    <h2 data-key="subtitle1">¿Qué es una convolución?</h2>
+    <p data-key="parragraph1">Una convolución en imágenes es una operación matemática utilizada en procesamiento de imágenes y redes neuronales convolucionales (CNN). Consiste en aplicar un filtro (o kernel) sobre una imagen para extraer características importantes como bordes, texturas o patrones específicos.</p>
+    <h2 data-key="subtitle2">¿Cómo funciona la convolución en imágenes?</h2>
+
+    <ol>
+      <li data-key="step1">Filtro (Kernel): Es una matriz pequeña (por ejemplo, 3x3 o 5x5) con valores numéricos.</li>
+      <li data-key="step2">Multiplicación y suma: Se desliza el filtro sobre la imagen, multiplicando cada píxel por el valor correspondiente del filtro y sumando los resultados.</li>
+      <li data-key="step3">Generación de una nueva imagen (mapa de características): Se obtiene una imagen transformada que resalta ciertos aspectos según el filtro utilizado.</li>
+    </ol>
+  </article>
+
+  <footer>
+    <p>Creado por <a href="https://www.linkedin.com/in/oscar-vargas-python/" target="_blank">Oscar Vargas Pedraza</a> y <a href="https://somospyp.com" target="_blank">P&P Soluciones de Tecnología</a></p>
+  </footer>
+
+
+    <script type="module" src="scripts.js"></script>
+    <script type="module" src="convolution.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZDR40V6PQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WZDR40V6PQ');
+    </script>
+</body>
+</html>
